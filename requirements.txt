@@ -4,4 +4,4 @@ uvicorn
 pillow
 numpy
 requests
-python-multipart
+python-multipartmatplotlib 
