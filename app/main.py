@@ -2,7 +2,7 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 import io
-from model_utils import predict
+from app.model_utils import predict
 
 app = FastAPI(title="EuroSAT Land Use Classifier")
 
