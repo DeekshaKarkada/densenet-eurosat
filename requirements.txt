@@ -4,5 +4,6 @@ uvicorn
 streamlit
 pillow
 numpy
+matplotlib
 requests
 python-multipart
