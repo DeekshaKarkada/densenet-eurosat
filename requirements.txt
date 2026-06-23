@@ -1,7 +1,9 @@
+# for Render FastAPI deployment
 tensorflow
 fastapi
 uvicorn
 pillow
 numpy
 requests
-python-multipartmatplotlib 
+python-multipart
+matplotlib
