@@ -1,9 +1,4 @@
-tensorflow==2.15.0
-fastapi
-uvicorn
 streamlit
 pillow
-numpy
 matplotlib
 requests
-python-multipart

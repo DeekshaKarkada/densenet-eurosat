@@ -2,9 +2,8 @@ import streamlit as st
 import requests
 from PIL import Image
 import matplotlib.pyplot as plt
-import numpy as np
 
-API_URL = "https://densenet-eurosat.onrender.com/predict"  # change this after deployment
+API_URL = "https://densenet-eurosat.onrender.com/predict"
 
 st.set_page_config(page_title="EuroSAT Classifier", page_icon="🛰️")
 st.title("🛰️ EuroSAT Land Use Classifier")
@@ -42,4 +41,4 @@ if uploaded_file:
         plt.tight_layout()
         st.pyplot(fig)
     else:
-        st.error("Prediction failed. Is the API running?")
+        st.error(f"Prediction failed: {response.status_code}")
