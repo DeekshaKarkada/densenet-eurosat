@@ -1,4 +1,7 @@
-streamlit
+tensorflow
+fastapi
+uvicorn
 pillow
-matplotlib
+numpy
 requests
+python-multipart
