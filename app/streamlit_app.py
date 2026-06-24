@@ -15,10 +15,11 @@ if uploaded_file:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image", width=300)
 
-    with st.spinner("Classifying..."):
+    with st.spinner("Classifying... (this may take up to 60 seconds)"):
         response = requests.post(
             API_URL,
-            files={"file": ("image.jpg", uploaded_file.getvalue(), "image/jpeg")}
+            files={"file": ("image.jpg", uploaded_file.getvalue(), "image/jpeg")},
+            timeout=120
         )
 
     if response.status_code == 200:
