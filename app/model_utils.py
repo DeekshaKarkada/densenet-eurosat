@@ -1,19 +1,31 @@
+import traceback
 import tensorflow as tf
 import numpy as np
 from PIL import Image
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 CLASS_NAMES = [
     'AnnualCrop', 'Forest', 'HerbaceousVegetation', 'Highway',
     'Industrial', 'Pasture', 'PermanentCrop', 'Residential',
     'River', 'SeaLake'
 ]
-
-model = None
+model =  None
 
 def load_model():
     global model
     if model is None:
-        model = tf.keras.models.load_model('models/Dense121_base_model.keras')
+        try:
+            model_path = os.path.join(BASE_DIR, 'models', 'Dense121_base_model.keras')
+            print(f"Loading model from: {model_path}")
+            print(f"File exists: {os.path.exists(model_path)}")
+            model = tf.keras.models.load_model(model_path)
+            print("Model loaded successfully!")
+        except Exception as e:
+            print(f"Error loading model: {e}")
+            traceback.print_exc()
+            raise
     return model
 
 def preprocess_image(image: Image.Image):
