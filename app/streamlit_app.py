@@ -12,7 +12,7 @@ CLASS_NAMES = [
 
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model('models/Dense121_base_model.keras')
+    return tf.keras.models.load_model('models/Dense121_finetuned_model.keras')
 
 def predict(image):
     img = image.convert('RGB').resize((224, 224))
