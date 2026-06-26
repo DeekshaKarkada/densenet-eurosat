@@ -1,9 +1,5 @@
-# for Render FastAPI deployment
 tensorflow
-fastapi
-uvicorn
+streamlit
 pillow
 numpy
-requests
-python-multipart
 matplotlib
